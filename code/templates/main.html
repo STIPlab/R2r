@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overarching analysis of the 2019 EC-OECD STIP Survey data</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        img.banner {
+          width: 80%;
+          height: auto;
+        }
+    </style>
+</head>
+
+<header>
+    <center><img class="banner" src="https://stiplab.github.io/R2r/banner.png" alt="Banner"></center>
+</header>
+
+<body style="margin:15px;padding:15px;background-color:#FAFAFA">
+<br>
+<h2><font color="4292c6"><strong>Overarching analysis of the 2019 EC-OECD STIP Survey data</strong></font></h2>
+
+<p>
+Prepared by Andrés Barreneche, OECD and Michael Keenan, OECD<br>
+Last update: {{ today }}<br><br>
+</p>
+
+<h3><font color="4292c6">Introduction</font></h3>
+
+<p style="text-align:justify;margin-left:40px;margin-right:100px">
+This online report describes the data collected in the 2019 edition of the EC-OECD Science, Technology and Innovation Policy (STIP) survey. The STIP Survey systematically collects in a harmonised way qualitative data on national science, technology and innovation (STI) policies. It addresses all areas of STI policy, including initiatives spread across different ministries and national agencies, with competence over domains as broad as research, innovation, education, industry, environment, labour, finance/budget, among others.
+</p>
+
+<p style="text-align:justify;margin-left:40px;margin-right:100px">
+The 2019 edition of the survey was administered between July-October 2019. The survey included 57 questions covering all main aspects of the (national) innovation system, structured around six “core” policy areas: (i) Governance, (ii) Public research system, (iii) Innovation in firms and innovative entrepreneurship, (iv) Science-industry knowledge transfer and sharing, (v) Human resources for research and innovation, and (vi) Research and innovation for society. It also includes an edition-specific “module” on Emerging trends in STI policy that covers selected key issues of concern to the EC's and OECD's policy agendas and work programmes.
+</p>
+
+<p style="text-align:justify;margin-left:40px;margin-right:100px">
+Most questions in the survey ask respondents to provide information on relevant STI “policy initiatives”. Drawing partly on an EC definition, an STI policy initiative can be defined as a public action that (i) aims to achieve one or several public policy goals in the policy area of science, technology and innovation, (ii) is expected to modify or frame the behaviours of actors and stakeholders, being national, domestic or foreign, who are part of or influential on, the national innovation system, and (iii) is implemented with a minimum time horizon or on a continuous basis (i.e. not as a one-off “event”). More information on the data model used to structure STIP Compass is available in <a href="https://stip.oecd.org/assets/downloads/STIPCompassTaxonomies.pdf">a reference document (PDF)</a> and in <a href="https://stip.oecd.org/assets/downloads/STIP_Model_and_Taxonomies.zip">machine readable format</a>.
+</p>
+
+<p style="text-align:justify;margin-left:40px;margin-right:100px">
+The survey is answered by government officials, with coordination carried out by national delegates of the OECD’s Committee for Scientific and Technological Policy (CSTP) and the EC’s European Research Area Committee (ERAC). The 2019 edition of the STIP Survey gathered information on 5,470 policy initiatives from 50 countries and 6 entities, i.e. 5 administrative authorities in Belgium (submitting separate responses), and the European Union (EU). <b>Figure 1</b> shows the territorial coverage of the survey.
+</p>
+
+<p style="text-align:center; font-size:14px">
+<b>Figure 1. Coverage of the 2019 edition of the EC-OECD STIP Survey</b><br>
+<img src="https://stiplab.github.io/R2r/world2-T.png" width="685" alt="Territorial coverage of the 2019 EC-OECD STIP survey">
+</p>
+
+<p style="text-align:justify;margin-left:40px;margin-right:100px">
+The 2019 EC-OECD STIP survey has seen STIP Compass data quality improve markedly. In the 2017 edition of the survey, 50% of initiatives were only partially completed.  In the 2019 edition of the survey, the share of incomplete initiatives decreased to 39%. More critically, the country median share of policy initiatives including an estimated yearly budget expenditure has increased from about 50% in the 2017 edition of the survey to 73% in the 2019 edition.
+</p>
+
+<p style="text-align:justify;margin-left:40px;margin-right:100px">
+It is important to note that the data consists of self-reported descriptions provided by survey respondents. To harmonise the database, the EC and OECD not only provide detailed guidance for answering the survey but also curate the information that has been reported. However, data quality can varies by country. In particular, some countries have provided more complete and detailed information compared to others. Country-specific scorecards provide different quality benchmarks of the current level of reporting in the database for each country. They include charts describing the country’s number of initiatives and the types of missing information that compare against the median country participating in the database. They are useful points of reference to identify gaps in the information that has been reported. The scorecards and complementary information on the data collection process are available in the <a href="https://community.oecd.org/community/cstp/stip/">STIP Survey resource centre</a>. Care should also be exercised when interpreting the data as initiatives vary in scope and scale, imposing limitations to how aggregations of initiatives can be interpreted.
+</p>
+
+<p style="text-align:justify;margin-left:40px;margin-right:100px">
+This report is based on a curated version of the 2019 STIP survey data (available for download <a href="https://stiplab.github.io/R2r/STIP-Data-Flatcsv-Apr2020.csv">here</a>). The analysis is broken down by sections, corresponding to each of the survey's policy areas and edition-specific module. They can be accessed using the links below. Each of these sections includes a summary of key messages and descriptions of the policy initiative data across its main dimensions: the themes and target groups addressed and their use of policy instruments. Moreover, the sections covering the six core policy areas of the survey include data and analysis of the main national policy debates.
+</p>
+
+<h3><font color="4292c6">Sections</font></h3>
+<ol>
+    {% for entry in PAREA %}
+        <li><a href="https://stiplab.github.io/R2r/{{ entry }}.html">{{ entry }}</a></li>
+    {% endfor %}
+</ol>
+
+</body>
+</html>

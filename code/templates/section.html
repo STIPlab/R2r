@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2019 EC-OECD STIP Survey: An overview of data reported under the {{ parea }} policy area</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+
+    <style>
+        .dataTables_filter{
+            float: left !important;
+            text-align: center !important;
+            padding: 20px
+        }
+        
+        thead, th {text-align: left;}
+        
+        img.banner {
+          width: 80%;
+          height: auto;
+        }
+        
+    </style>
+
+    <script>
+        $(document).ready(function() {
+                $('#{{ table_id }}').DataTable({
+                    responsive: true,
+                    paging: false,
+                    "aaSorting": [],
+                    "dom": 'frt',
+                    "columns": [
+                        { "width": "20%" },
+                        null
+                    ]
+                });
+        } );
+    </script>
+    
+</head>
+
+<header>
+    <center><img class="banner" src="https://stiplab.github.io/R2r/banner.png" alt="Banner"></center>
+</header>
+
+<body style="margin:15px;padding:15px;background-color:#FAFAFA">
+<br>
+
+{% if parea != "Emerging trends in STI policy" %}
+    <h2><font color="4292c6"><strong><a href="https://stiplab.github.io/R2r/main.html"><font color="4292c6">⇤</font></a> 2019 EC-OECD STIP Survey: {{ parea }} policy area</strong></font></h2>
+{% else %}
+    <h2><font color="4292c6"><strong><a href="https://stiplab.github.io/R2r/main.html"><font color="4292c6">⇤</font></a> 2019 EC-OECD STIP Survey: {{ parea }}</strong></font></h2>
+{% endif %}
+
+<br>
+<h3><font color="4292c6">Contents</font></h3>
+<ol>
+    <li><a href="#Highlights">Key messages</a></li>
+    {% if parea != "Emerging trends in STI policy" %}
+        <li><a href="#mainDebates">Main national policy debates</a></li>
+    {% endif %}
+    <li><a href="#dataSnapshot">Snapshot of policy initiative data</a></li>
+    {% if parea != "Emerging trends in STI policy" %}
+        <li><a href="#nationalDebates">Annex A: Raw data for national policy debates</a></li>
+    {% endif %}
+</ol><br>
+
+<h3><a name="Highlights"></a><font color="4292c6">1. Highlights</font></h3>
+
+<div style="text-align:justify;margin-left:40px;margin-right:100px">
+{{ texts[0] }}
+<br>
+</div>
+
+{% if parea != "Emerging trends in STI policy" %}
+    <h3><a name="mainDebates"><font color="4292c6">2. Main national policy debates</font></h3>
+
+<p style="text-align:justify;margin-left:40px;margin-right:100px">
+    {{ texts[1] }}
+</p>
+
+{% endif %}
+
+{% if parea != "Emerging trends in STI policy" %}
+    <h3><a name="dataSnapshot"><font color="4292c6">3. Snapshot of policy initiative data</font></h3>
+{% else %}
+    <h3><a name="dataSnapshot"><font color="4292c6">2. Snapshot of policy initiative data</font></h3>
+{% endif %}
+
+<p style="text-align:justify;margin-left:40px;margin-right:100px">
+    {{ texts[2] }}
+</p>
+
+<center>
+    {% include "figures/" + parea + "/Figure1.html" %}
+</center>
+<br>
+
+<p style="text-align:justify;margin-left:40px;margin-right:100px">
+    {{ texts[3] }}
+</p>
+
+<center>
+    {% include "figures/" + parea + "/Figure2.html" %}
+</center>
+<br>
+
+<p style="text-align:justify;margin-left:40px;margin-right:100px">
+    {{ texts[4] }}
+</p>
+
+<center>
+    {% include "figures/" + parea + "/Figure3.html" %}
+</center>
+<br>
+
+<p style="text-align:justify;margin-left:40px;margin-right:100px">
+    {{ texts[5] }}
+</p>
+
+<center>
+    {% include "figures/" + parea + "/Figure4.html" %}
+</center>
+<br>
+
+<p style="text-align:justify;margin-left:40px;margin-right:100px">
+    {{ texts[6] }}
+</p>
+
+<center>
+    {% include "figures/" + parea + "/Figure5.html" %}
+</center>
+
+{% if parea != "Emerging trends in STI policy" %}
+<br><br>
+
+    <h3><a name="nationalDebates"><font color="4292c6">4. Annex A: Raw data for national policy debates</font></h3>
+    
+    <p style="text-align:justify;margin-left:40px;margin-right:100px">
+    <b>Table 1</b> contains the answers provided by countries (and other entities) to the following question: <i>{{ PDQtext }}</i> You may use the table's search box to filter the data by country or keyword. You may also <a href="http://stiplab.github.io/R2r/pdq/{{ parea }}.xlsx" download>dowload the data in Excel format.</a>
+    </p>
+    
+    <br>
+    
+    <p>
+    <b>Table 1. Policy debates in the {{ parea }} policy area</b>
+    </p>
+
+    {{ table }}
+
+{% endif %}
+
+</body>
+</html>
